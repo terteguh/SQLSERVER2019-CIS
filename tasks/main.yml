@@ -1,0 +1,53 @@
+---
+# tasks file for SQLSERVER2019-CIS
+
+
+
+- name: Run Section 1 tasks
+  ansible.builtin.import_tasks: section_1/main.yml
+  when:
+      - mssql19cis_section1
+  tags:
+      - mssql19cis_section1
+
+- name: Run Section 2 tasks
+  ansible.builtin.import_tasks: section_2/main.yml
+  when:
+      - mssql19cis_section2
+  tags:
+      - mssql19cis_section2
+
+- name: Run Section 3 tasks
+  ansible.builtin.import_tasks: section_3/main.yml
+  when:
+      - mssql19cis_section3
+  tags:
+      - mssql19cis_section3
+
+- name: Run Section 4 tasks
+  ansible.builtin.import_tasks: section_4/main.yml
+  when:
+      - mssql19cis_section4
+  tags:
+      - mssql19cis_section4
+
+- name: run Section 5 tasks
+  ansible.builtin.import_tasks: section_5/main.yml
+  when:
+      - mssql19cis_section5
+  tags:
+      - mssql19cis_section5
+
+- name: Run Section 6 tasks
+  ansible.builtin.import_tasks: section_6/main.yml
+  when:
+      - mssql19cis_section6
+  tags:
+      - mssql19cis_section6
+
+
+- name: Output Warning count and control IDs affected
+  ansible.builtin.debug:
+      msg: "You have {{ warn_count }} warning(s) that require investigating that are related to the following benchmark ID(s) {{ warn_control_list }}"
+  tags:
+      - always

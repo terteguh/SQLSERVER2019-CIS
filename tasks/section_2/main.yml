@@ -1,0 +1,52 @@
+---
+
+- name: "SECTION | 2.1 | Ensure 'Ad Hoc Distributed Queries' Server Configuration Option is set to '0'"
+  ansible.builtin.import_tasks: cis_2.1.yml
+
+- name: "SECTION | 2.2 | Ensure 'CLR Enabled' Server Configuration Option is set to '0'"
+  ansible.builtin.import_tasks: cis_2.2.yml
+
+- name: "SECTION | 2.3 | Ensure 'Cross DB Ownership Chaining' Server Configuration Option is set to '0'"
+  ansible.builtin.import_tasks: cis_2.3.yml
+
+- name: "SECTION | 2.4 | Ensure 'Database Mail XPs' Server Configuration Option is set to '0'"
+  ansible.builtin.import_tasks: cis_2.4.yml
+
+- name: "SECTION | 2.5 | Ensure 'Ole Automation Procedures' Server Configuration Option is set to '0' "
+  ansible.builtin.import_tasks: cis_2.5.yml
+
+- name: "SECTION | 2.6 | Ensure 'Remote Access' Server Configuration Option is set to '0' "
+  ansible.builtin.import_tasks: cis_2.6.yml
+  
+- name: "SECTION | 2.7 | Ensure 'Remote Admin Connections' Server Configuration Option is set to '0' "
+  ansible.builtin.import_tasks: cis_2.7.yml
+  
+- name: "SECTION | 2.8 | Ensure 'Scan For Startup Procs' Server Configuration Option is set to '0' "
+  ansible.builtin.import_tasks: cis_2.8.yml
+  
+- name: "SECTION | 2.9 | Ensure 'Trustworthy' Database Property is set to 'Off' "
+  ansible.builtin.import_tasks: cis_2.9.yml
+  
+- name: "SECTION | 2.10 | Ensure Unnecessary SQL Server Protocols are set to 'Disabled' "
+  ansible.builtin.import_tasks: cis_2.10.yml
+  
+- name: "SECTION | 2.11 | Ensure SQL Server is configured to use non-standard ports "
+  ansible.builtin.import_tasks: cis_2.11.yml
+  
+- name: "SECTION | 2.12 | Ensure 'Hide Instance' option is set to 'Yes' for Production SQL Server instances "
+  ansible.builtin.import_tasks: cis_2.12.yml
+  
+- name: "SECTION | 2.13 | Ensure the 'sa' Login Account is set to 'Disabled' "
+  ansible.builtin.import_tasks: cis_2.13.yml
+  
+- name: "SECTION | 2.14 | Ensure the 'sa' Login Account has been renamed "
+  ansible.builtin.import_tasks: cis_2.14.yml
+  
+- name: "SECTION | 2.15 | Ensure 'AUTO_CLOSE' is set to 'OFF' on contained databases "
+  ansible.builtin.import_tasks: cis_2.15.yml
+  
+- name: "SECTION | 2.16 | Ensure no login exists with the name 'sa' "
+  ansible.builtin.import_tasks: cis_2.16.yml
+  
+- name: "SECTION | 2.17 | Ensure 'clr strict security' Server Configuration Option is set to '1' "
+  ansible.builtin.import_tasks: cis_2.17.yml

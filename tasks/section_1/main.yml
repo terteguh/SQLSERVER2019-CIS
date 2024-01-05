@@ -1,0 +1,4 @@
+---
+
+- name: "SECTION | 1.1 | Ensure Latest SQL Server Cumulative and Security Updates are Installed"
+  ansible.builtin.import_tasks: cis_1.1.yml

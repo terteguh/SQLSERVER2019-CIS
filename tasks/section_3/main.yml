@@ -1,0 +1,35 @@
+---
+
+- name: "SECTION | 3.1 | Ensure 'Server Authentication' Property is set to 'Windows Authentication Mode' "
+  ansible.builtin.import_tasks: cis_3.1.yml
+
+- name: "SECTION | 3.2 | Ensure CONNECT permissions on the 'guest' user is Revoked within all SQL Server databases "
+  ansible.builtin.import_tasks: cis_3.2.yml
+
+- name: "SECTION | 3.3 | Ensure 'Orphaned Users' are Dropped From SQL Server Databases "
+  ansible.builtin.import_tasks: cis_3.3.yml
+
+- name: "SECTION | 3.4 | Ensure SQL Authentication is not used in contained databases "
+  ansible.builtin.import_tasks: cis_3.4.yml
+
+- name: "SECTION | 3.5 | Ensure the SQL Servers MSSQL Service Account is Not an Administrator "
+  ansible.builtin.import_tasks: cis_3.5.yml
+
+- name: "SECTION | 3.6 | Ensure the SQL Servers SQLAgent Service Account is Not an Administrator "
+  ansible.builtin.import_tasks: cis_3.6.yml
+  
+- name: "SECTION | 3.7 | Ensure the SQL Servers Full-Text Service Account is Not an Administrator "
+  ansible.builtin.import_tasks: cis_3.7.yml
+  
+- name: "SECTION | 3.8 | Ensure only the default permissions specified by Microsoft are granted to the public server role "
+  ansible.builtin.import_tasks: cis_3.8.yml
+  
+- name: "SECTION | 3.9 | Ensure Windows BUILTIN groups are not SQL Logins "
+  ansible.builtin.import_tasks: cis_3.9.yml
+  
+- name: "SECTION | 3.10 | Ensure Windows local groups are not SQL Logins "
+  ansible.builtin.import_tasks: cis_3.10.yml
+  
+- name: "SECTION | 3.11 | Ensure the public role in the msdb database is not granted access to SQL Agent proxies "
+  ansible.builtin.import_tasks: cis_3.11.yml
+  
