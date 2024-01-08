@@ -1,14 +1,17 @@
 ---
 # defaults file for SQLSERVER2019-CIS
 
-mssql_login_user: Administrator
+mssql_login_user: WIN-8C16K368U73\\Administrator
 mssql_login_password: PAssw0rd
 mssql_host: 192.168.0.24
 sql_database: master
 mssql_port: 1433
 
-db_user: WIN-8C16K368U73\Administrator
+# db_user: WIN-8C16K368U73\Administrator
 db_pass: PAssw0rd
+
+tsql_server: WIN-8C16K368U73
+tsql_database: master
 
 mssql19cis_section1: true
 mssql19cis_section2: true

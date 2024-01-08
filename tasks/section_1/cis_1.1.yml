@@ -13,29 +13,53 @@
 
 
 
-# - name: two batches with dict output
+# - name: test script 
 #   community.general.mssql_script:
-#     # login_user: "{{ mssql_login_user }}"
-#     # login_password: "{{ mssql_login_password }}"
+#     login_user: "{{ mssql_login_user }}"
+#     login_password: "{{ mssql_login_password }}"
 #     login_host: "{{ mssql_host }}"
-#     login_port: "{{ mssql_port }}"
+#     # login_port: "{{ mssql_port }}"
 #     db: master
 #     script: "SELECT 1"
 #     scriptdir: 
 
-- name: Run PowerShell script
-  win_shell: "C:\\temp\\example.ps1"
-  register: ps_output
+# - name: Run PowerShell script
+#   win_shell: "C:\\temp\\example.ps1"
+#   register: ps_output
 
-- name: Display PowerShell script output
-  debug:
-    var: ps_output.stdout_lines
+# - name: Display PowerShell script output
+#   debug:
+#     var: ps_output.stdout_lines
 
 
-- name: Run T-SQL query using PowerShell
+# - name: Run T-SQL query using PowerShell
+#   win_shell: |
+#     $query = Get-Content "C:\\temp\\test.sql" -Raw
+#     $connectionString = "Server=WIN-8C16K368U73;Database=master;Integrated Security=True;"
+#     Invoke-Sqlcmd -Query $query -ConnectionString $connectionString
+#   register: sql_output
+
+# - name: Display T-SQL query output
+#   debug:
+#     var: sql_output.stdout_lines
+
+
+# - name: Run T-SQL query using PowerShell VARIABLE DI QUERY JALAN
+#   win_shell: |
+#     $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'"
+#     $connectionString = "Server=WIN-8C16K368U73;Database=master;Integrated Security=True;"
+#     Invoke-Sqlcmd -Query $query -ConnectionString $connectionString
+#   register: sql_output
+
+# - name: Display T-SQL query output
+#   debug:
+#     var: sql_output.stdout_lines
+
+
+- name: Run T-SQL query using PowerShell CONNECTION DI DEFAULT
   win_shell: |
-    $query = Get-Content "C:\\temp\\test.sql" -Raw
-    $connectionString = "Server=WIN-8C16K368U73;Database=master;Integrated Security=True;"
+    $query = "SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE'"
+    $connectionString = "Server={{ tsql_server }};Database={{ tsql_database }};Integrated Security=True;"
     Invoke-Sqlcmd -Query $query -ConnectionString $connectionString
   register: sql_output
 
